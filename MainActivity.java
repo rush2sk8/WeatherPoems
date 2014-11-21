@@ -50,20 +50,6 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-
-		/*LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-		Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-        boolean gpsEnabled = false, networkEnabled=false;
-		try {
-           gpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        } catch (Exception ex) {
-        }
-        try {
-            networkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-        } catch (Exception ex) {
-        }
-		if(!gpsEnabled && !networkEnabled)
-			finish();*/
 		Location location = null;
         LocationManager locManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         if(locManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)){
@@ -243,13 +229,7 @@ public class MainActivity extends Activity {
 		linePool.add("No school tomorrow");
 		linePool.add("Winter-Wonderland");
 		linePool.add("Salt trucks are en route");
-		/*linePool.add("");
-		linePool.add("");
-		linePool.add("");
-		linePool.add("");
-		linePool.add("");
-		linePool.add("");
-		linePool.add("");*/
+
 		Random rand = new Random();
 		int choice = rand.nextInt(linePool.size());
 		return linePool.get(choice);
@@ -258,15 +238,7 @@ public class MainActivity extends Activity {
 		List<String> linePool=new LinkedList<String>();
 		linePool.add("Shovels will come in handy");
 		linePool.add("Tree limbs are getting heavy");
-		/*linePool.add("");
-		linePool.add("");
-		linePool.add("");
-		linePool.add("");
-		linePool.add("");
-		linePool.add("");
-		linePool.add("");
-		linePool.add("");
-		linePool.add("");*/
+	
 		Random rand = new Random();
 		int choice = rand.nextInt(linePool.size());
 		String lineToReturn = linePool.get(choice);
@@ -320,8 +292,7 @@ public class MainActivity extends Activity {
 		linePool.add("Feel mother nature's despair");
 		linePool.add("Moon is hidden by the clouds");
 		linePool.add("Water particles in air");
-		//linePool.add("");
-		//linePool.add("");
+	
 		Random rand = new Random();
 		int choice = rand.nextInt(linePool.size());
 		String lineToReturn = linePool.get(choice);
@@ -385,7 +356,7 @@ public class MainActivity extends Activity {
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
+
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
